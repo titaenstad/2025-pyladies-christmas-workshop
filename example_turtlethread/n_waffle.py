@@ -21,21 +21,21 @@ def make_n_part_heart(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Draw a looping pattern of heart-like waffle stitches.",
+        description="Draw a Norwegian waffle (of n hearts).",
     )
     parser.add_argument(
         "n",
         type=int,
         nargs="?",
         default=5,
-        help="How many motifs to stitch around the circle (default: %(default)s)",
+        help="How many hearts in the waffle (default: %(default)s)",
     )
     parser.add_argument(
         "same_side_length",
         nargs="?",
         type=int,
         default=150,
-        help="Length of the two equal sides in each heart motif (default: %(default)s)",
+        help="Length of the two equal sides in each heart (default: %(default)s)",
     )
     return parser.parse_args()
 

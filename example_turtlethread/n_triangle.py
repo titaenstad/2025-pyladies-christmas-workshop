@@ -44,7 +44,7 @@ def parse_args() -> argparse.Namespace:
         nargs="?",
         type=int,
         default=150,
-        help="Length of the two equal sides in each triangle motif (default: %(default)s)",
+        help="Length of the two equal sides in each triangle (default: %(default)s)",
     )
     return parser.parse_args()
 

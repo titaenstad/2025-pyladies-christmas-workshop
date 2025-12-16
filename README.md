@@ -6,19 +6,36 @@ Let's get coding and crafting together!
 
 ## Setup
 
-To create patterns, you will need a Python installation with Turtle (which will work for most standard Python installations). However, if you don't have a Python installation on your machine, then you can also use our experimental [TurtleThread web editor](https://marieroald.github.io/2025-pyladies-christmas-workshop), which has both Turtle and TurtleThread installed.
+To create patterns, you will need a Python installation with Turtle (which will work for most standard Python installations). However, if you don't have a Python installation on your machine, then you can also use our experimental [TurtleThread web editor](https://marieroald.github.io/2025-pyladies-christmas-workshop), which has both Turtle and TurtleThread installed (**Note:** The web editor is a work in progress and can be a bit slow in Chrome and Edge).
 
-## Installing TurtleThread
+### Cloning the repo and using a package manager (PDM or uv)
+
+First, you need to clone the repo:
+
+```bash
+git clone https://github.com/MarieRoald/2025-pyladies-christmas-workshop
+```
+
+Then, you enter the cloned directory and install the dependencies with [PDM](https://pdm-project.org/en/latest/#installation) or [uv](https://docs.astral.sh/uv/getting-started/installation/):
+
+```bash
+cd 2025-pyladies-christmas-workshop
+pdm install
+# OR with uv
+# uv sync
+```
+
+### Installing TurtleThread manually
 
 You can install TurtleThread with whatever package manager you like (we recommend using a virtual environment). For example, with pip:
 
-```raw
+```bash
 pip install turtlethread
 ```
 
 or pdm, uv or poetry
 
-```raw
+```bash
 [pdm/uv/poetry] add turtlethread
 ```
 

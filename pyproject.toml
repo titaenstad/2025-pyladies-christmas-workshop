@@ -1,0 +1,26 @@
+[project]
+name = "pyladies-christmas-workshop"
+description = ""
+authors = [
+    {name = "Marie Roald"},
+]
+dependencies = [
+    "turtlethread>=0.0.11",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = "MIT"
+version = "0.0.1"
+
+[project.optional-dependencies]
+plots = [
+    "dhlab>=2.41.0",
+    "holoviews>=1.20.0",
+    "wordcloud>=1.9.4",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.9.3",
+    "seaborn>=0.13.2",
+]
+
+[tool.pdm]
+distribution = false

@@ -35,6 +35,7 @@ colls = (
 )
 
 # Remove all words that are equal to the search term
+print("Removing search term")
 to_delete = [key for key in colls if key.lower() == search_term]
 for key in to_delete:
     del colls[key]
@@ -42,6 +43,7 @@ for key in to_delete:
 
 # Create the wordcloud
 ## First, we create a circular mask
+print("Creating word cloud")
 x, y = np.ogrid[:3000, :3000]
 mask = (x - 1500) ** 2 + (y - 1500) ** 2 > 1300**2
 mask = 255 * mask.astype(int)

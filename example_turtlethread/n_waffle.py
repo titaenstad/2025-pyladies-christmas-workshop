@@ -40,34 +40,40 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> None:
-    args = parse_args()
-    n = args.n
-    same_side_length = args.same_side_length
+def n_heart_waffle(heart_side_length: int, num_hearts: int, needle):
     middle_side_length = find_last_side(
-        side_length=same_side_length,
-        number_of_triangles=n,
+        side_length=heart_side_length,
+        number_of_triangles=num_hearts,
     )
     # inner angle between the two sides of equal length
-    angle_v = 360 / n
+    angle_v = 360 / num_hearts
+
     # angle between the unknown side and either of the known sides
     angle_u = (180 - angle_v) / 2
+
     rotate_angle = 180 - angle_u - 90
 
-    needle = turtlethread.Turtle()
-
     with needle.running_stitch(20):  # 2mm
-        for _ in range(n):
+        for _ in range(num_hearts):
             make_n_part_heart(
-                same_side_length=same_side_length,
+                same_side_length=heart_side_length,
                 middle_side_length=middle_side_length,
                 rotate_angle=rotate_angle,
                 needle=needle,
             )
             needle.left(180)
 
+
+def main() -> None:
+    args = parse_args()
+
+    needle = turtlethread.Turtle()
+    n_heart_waffle(
+        heart_side_length=args.same_side_length, num_hearts=args.n, needle=needle
+    )
+
     needle.show_info()
-    needle.save(f"waffle_{n}.jef")
+    needle.save(f"waffle_{args.n}.jef")
     needle.visualise(scale=0.5)
 
 
